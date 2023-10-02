@@ -1,0 +1,2 @@
+# desigualdad
+Datos y diccionario
