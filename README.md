@@ -2,6 +2,8 @@
 Datos y diccionario
 
 ## Diccionario de datos:
+1. Directorio
+2. Orden
 1. P6020: sexo al nacer
 1. P6040: edad
 1. P5502: estado civil
