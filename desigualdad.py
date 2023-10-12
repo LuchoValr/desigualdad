@@ -55,18 +55,22 @@ data1 = data.copy()
 for col in ['P1710S12', 'P9010', 'P9025S1', 'P9025S2']:
     data[col] = data[col].replace(2, 0)
 
-data['FDI'] = '1'
+for col in ['P1910', 'P1911', 'P1912', 'P1084']:
+    print(f'{col}----------------')
+    data[col].mean()
+#En promedio la frecuencia del uso de esos dispositivos es una vez al año
+#Y en promedio la frecuencia del uso del internet es al menos una vez al mes
 
+data['FDI'] = '1'
 for index, row in data.iterrows():
-    x = row['P1910'] + row['P1911'] + row['P1912']
-    if x >= 9:
+    if row['P1910'] >= 4.519168821933349:
         data.at[index, 'FDI'] = data.at[index, 'FDI'].replace('1', '0')
 
 data['FDI'].value_counts()
 
 data['FI'] = '1'
 for index, row in data.iterrows():
-    if row['P1084'] >= 3:
+    if row['P1084'] >= 2.777614574823381:
         data.at[index, 'FI'] = data.at[index, 'FI'].replace('1', '0')
 
 data['FI'].value_counts()
